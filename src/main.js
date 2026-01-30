@@ -64,4 +64,20 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => {
     observer.observe(el);
 });
+    // Логика аккордеона
+const accordionItems = document.querySelectorAll('.accordion__item');
+
+accordionItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Закрываем все открытые
+        accordionItems.forEach(el => el.classList.remove('active'));
+        
+        // Если кликнули по закрытому — открываем
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
 });
