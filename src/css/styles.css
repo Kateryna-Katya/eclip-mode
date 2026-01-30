@@ -647,3 +647,123 @@ a {
 .blog-card__link:hover {
     letter-spacing: 1px;
 }
+/* --- Contact Section --- */
+.contact {
+    padding: 120px 0;
+    background-color: var(--bg-light);
+}
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.contact__details {
+    margin-top: 40px;
+}
+
+.contact__method {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__method strong {
+    color: var(--bg-dark);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Form Styles */
+.form {
+    background: white;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(58, 77, 57, 0.08);
+}
+
+.form__group {
+    margin-bottom: 20px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 18px 25px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(162, 197, 121, 0.05);
+}
+
+.form__captcha {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f8f9f8;
+    border-radius: 12px;
+}
+
+.form__input--small {
+    width: 100px;
+}
+
+.form__checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.form__checkbox-text {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.btn--full {
+    width: 100%;
+    padding: 20px;
+}
+
+.form__status {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.form__status.success {
+    display: block;
+    background: #e7f3e6;
+    color: #3A4D39;
+}
+
+.form__status.error {
+    display: block;
+    background: #fdeaea;
+    color: #c0392b;
+}
+
+@media (max-width: 992px) {
+    .contact__grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .form {
+        padding: 30px;
+    }
+}

@@ -80,4 +80,51 @@ accordionItems.forEach(item => {
         }
     });
 });
+    
 });
+// Капча и валидация
+let captchaResult;
+
+function generateCaptcha() {
+    const a = Math.floor(Math.random() * 10) + 1;
+    const b = Math.floor(Math.random() * 10) + 1;
+    captchaResult = a + b;
+    document.getElementById('captchaQuestion').textContent = `Сколько будет ${a} + ${b}?`;
+}
+
+const phoneInput = document.getElementById('phoneInput');
+phoneInput.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+});
+
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const userAnswer = parseInt(document.getElementById('captchaAnswer').value);
+    
+    if (userAnswer !== captchaResult) {
+        formStatus.textContent = "Неверный ответ капчи!";
+        formStatus.className = "form__status error";
+        return;
+    }
+
+    // Имитация AJAX
+    const btn = contactForm.querySelector('button');
+    btn.textContent = "Отправка...";
+    btn.disabled = true;
+
+    setTimeout(() => {
+        formStatus.textContent = "Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.";
+        formStatus.className = "form__status success";
+        contactForm.reset();
+        generateCaptcha();
+        btn.textContent = "Начать сейчас";
+        btn.disabled = false;
+    }, 1500);
+});
+
+// Инициализация капчи при загрузке
+document.addEventListener('DOMContentLoaded', generateCaptcha);
