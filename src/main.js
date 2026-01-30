@@ -128,3 +128,38 @@ contactForm.addEventListener('submit', function(e) {
 
 // Инициализация капчи при загрузке
 document.addEventListener('DOMContentLoaded', generateCaptcha);
+// Мобильное меню
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+const navLinks = document.querySelectorAll('.nav__link');
+
+const toggleMenu = () => {
+    burger.classList.toggle('burger--active');
+    nav.classList.toggle('nav--active');
+    document.body.style.overflow = nav.classList.contains('nav--active') ? 'hidden' : '';
+};
+
+burger.addEventListener('click', toggleMenu);
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (nav.classList.contains('nav--active')) toggleMenu();
+    });
+});
+
+// Cookie Popup Логика
+const cookiePopup = document.getElementById('cookiePopup');
+const acceptBtn = document.getElementById('acceptCookies');
+
+window.addEventListener('load', () => {
+    if (!localStorage.getItem('cookiesAccepted')) {
+        setTimeout(() => {
+            cookiePopup.classList.add('cookie-popup--active');
+        }, 2000);
+    }
+});
+
+acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    cookiePopup.classList.remove('cookie-popup--active');
+});
