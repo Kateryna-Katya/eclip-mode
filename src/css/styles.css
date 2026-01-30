@@ -884,3 +884,78 @@ a {
         text-align: center;
     }
 }
+/* --- Styles for Legal Pages --- */
+.page-template {
+    background-color: var(--bg-light);
+}
+
+.pages {
+    padding: 160px 0 100px;
+    /* Большой отступ сверху из-за фикс. хедера */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pages h1 {
+    font-size: 3rem;
+    color: var(--bg-dark);
+    margin-bottom: 40px;
+    line-height: 1.1;
+}
+
+.pages h2 {
+    font-size: 1.5rem;
+    color: var(--bg-dark);
+    margin: 40px 0 20px;
+    border-left: 4px solid var(--accent);
+    padding-left: 20px;
+}
+
+.pages p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.pages ul {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.pages li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.6;
+}
+
+.pages li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.pages strong {
+    color: var(--bg-dark);
+    font-weight: 600;
+}
+
+.page-link {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .pages h1 {
+        font-size: 2.2rem;
+    }
+
+    .pages {
+        padding-top: 120px;
+    }
+}
