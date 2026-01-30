@@ -308,3 +308,73 @@ a {
         justify-content: center;
     }
 }
+/* --- About Section --- */
+.about {
+    padding: 120px 0;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--bg-dark);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about__item {
+    padding-left: 30px;
+    border-left: 2px solid var(--accent);
+}
+
+.about__item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--bg-dark);
+}
+
+.about__icon {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+/* Scroll Animation Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal--active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+    .about__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
