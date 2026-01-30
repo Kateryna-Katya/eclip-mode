@@ -13,7 +13,7 @@
     rel="stylesheet">
 
     <script type="module" crossorigin src="/eclip-mode/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/eclip-mode/assets/styles-DszwF5v6.css">
+    <link rel="stylesheet" crossorigin href="/eclip-mode/assets/styles-4DC66K4w.css">
   </head>
   <body>
     <header class="header">
@@ -262,6 +262,58 @@
                     <a href="#contact" class="blog-card__link">Читать далее →</a>
                 </div>
             </article>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact__grid">
+            <div class="contact__info reveal">
+                <h2 class="section-title">Бесплатная консультация <br> по всем вопросам</h2>
+                <p class="section-subtitle">Запросите доступ к платформе или узнайте детали обучения у наших экспертов.
+                    Мы свяжемся с вами в течение 15 минут.</p>
+
+                <div class="contact__details">
+                    <div class="contact__method">
+                        <strong>Поддержка:</strong>
+                        <span>hello@eclip-mode.blog</span>
+                    </div>
+                    <div class="contact__method">
+                        <strong>Локация:</strong>
+                        <span>Paris, France</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact__form-wrapper reveal">
+                <form id="contactForm" class="form">
+                    <div class="form__group">
+                        <input type="text" name="name" class="form__input" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" name="email" class="form__input" placeholder="Email" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="tel" id="phoneInput" name="phone" class="form__input"
+                            placeholder="Телефон (только цифры)" required>
+                    </div>
+
+                    <div class="form__captcha">
+                        <span id="captchaQuestion" class="form__captcha-text"></span>
+                        <input type="number" id="captchaAnswer" class="form__input form__input--small"
+                            placeholder="Ответ" required>
+                    </div>
+
+                    <label class="form__checkbox-label">
+                        <input type="checkbox" required>
+                        <span class="form__checkbox-text">Согласен на обработку персональных данных</span>
+                    </label>
+
+                    <button type="submit" class="btn btn--primary btn--full">Начать сейчас</button>
+
+                    <div id="formStatus" class="form__status"></div>
+                </form>
+            </div>
         </div>
     </div>
 </section>
